@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            #app{
+             width:200px;
+             height:200px;
+             background:red;   
+            }
+    </style>
+</head>
+<body>
+    <div id='app'></div>
+    <script>
+    // var obj = { name: "陶丽", age: 14, a: "niho" }
+    // for(var key in obj){
+    //     console.log(key,obj[key])
+    // }
+    var obj={1:"a",2:"b",3:"c"}
+    for(var key in obj){ 
+        console.log(key,obj[key])
+    }
+    var app=document.getElementById("app");
+    
+    console.log(window.getComputedStyle(app,null)['width'])
+  
+    // document.getElementsByClassName('xxx') && document.getElementsByClassName('xxx')[0]
+    // document.querySelector('.XXX') 这个方法不兼容ie6-8，比起上面的写法更简便，有值就返回匹配到的第一个，没有
+    // 值就返回null，比起上面省去一步判断
+
+
+
+
+
+
+    </script>
+</body>
+</html>
