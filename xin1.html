@@ -1,42 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-            #app{
-             width:200px;
-             height:200px;
-             background:red;   
-            }
+        #app {
+            width: 200px;
+            height: 500px;
+            background: red;
+        }
+        #img{
+            height:300px;
+            background-image:url("https://image.freepik.com/free-vector/modern-technological-elements-with-transparent-background_1035-7108.jpg") 
+        }
     </style>
 </head>
+
 <body>
-    <div id='app'></div>
-    <script>
-    // var obj = { name: "陶丽", age: 14, a: "niho" }
-    // for(var key in obj){
-    //     console.log(key,obj[key])
-    // }
-    var obj={1:"a",2:"b",3:"c"}
-    for(var key in obj){ 
-        console.log(key,obj[key])
-    }
-    var app=document.getElementById("app");
+    <div id='app'>
+        <p id='p'></p>
+        <ul id='ul'>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        </div>
+        <div id="img">
+        <img  src="" alt="" trueImage="https://image.freepik.com/free-psd/abstract-background-design_1297-73.jpg">
+    </div>
+    <!-- <script>
+        // var obj = { name: "陶丽", age: 14, a: "niho" }
+        // for(var key in obj){
+        //     console.log(key,obj[key])
+        // }
+        // var obj={1:"a",2:"b",3:"c"}
+        // for(var key in obj){ 
+        //     console.log(key,obj[key])
+        // }
+        // var app=document.getElementById("app");
+
+        // console.log(window.getComputedStyle(app,null)['width'])
+
+        // document.getElementsByClassName('xxx') && document.getElementsByClassName('xxx')[0]
+        // document.querySelector('.XXX') 这个方法不兼容ie6-8，比起上面的写法更简便，有值就返回匹配到的第一个，没有
+        // 值就返回null，比起上面省去一步判断
+
+        // var ary=[34,67,89,2,5,1];
+        //    var a= ary.sort(function(a,b){
+        //         return a-b;
+        //     })
+        //     console.log(a)
+        //             var max=ary[0];
+        //             var min=ary[0];
+        //             for(var i=1;i<ary.length;i++){
+        //                 var cur=ary[i];
+        //                 cur>max?max=cur:null;
+        //                 cur<min?min=cur:null;
+        //             }
+        // console.log(max,min)
+        // var max=Math.max.apply(null,ary);
+        // var min=Math.min.apply(null,ary);
+        // console.log(max,min);
+        // console.log(eval(Math.max(ary.toString())));
+        //     var ary=[1,1,2,3,4,3,2,1,3,21,2,1,3];
+        //     var obj={};
+        //     for(var i=0;i<ary.length;i++){
+        //         var cur=ary[i];
+        //         if(obj[cur]===cur){
+        //             ary.splice(i,1);
+        //             i--;
+        //             continue;
+        //         }
+        //         obj[cur]=cur;
+        //     }
+        // console.log(ary,obj);
+
+        //     function sum(){
+        //         var total=null;
+        //         for(var i=0;i<arguments.length;i++){
+        //             var cur=arguments[i];
+        //             if(Number(cur)){
+        //                 total+=cur;
+        //             }
+        //         }
+        //         console.log(total)
+        //         return total;
+        //     }
+        // sum(1,2,4,'e')
+
+        //    var a= document.createElement("p")
+        //    console.log(a)
+        //         var id=document.getElementById("app");
+        //        document.body.insertBefore(a,id);
+        //    var b=document.createTextNode("你手机放得开哈数据库立法会");
+        //    a.appendChild(b);
+        // var app=document.getElementById("app");
+        //   var c=app.childNodes
+        //         console.log(c);
+        //     var d=app.children;
+        //     console.log(d);
+        //获取一个元素下所有的元素子节点
+        // var app=document.getElementById("app")
+        //         function children(curEle){
+        //           var ary=[];
+        //           var childList=curEle.childNodes;
+        //           for(var i=0;i<childList.length;i++){
+        //               var cur=childList[i];
+        //               if(cur.nodeType===1){
+        //                   ary.push(cur);
+        //               }
+        //           }
+
+        //           return ary;
+
+        //         }
+
+        //         var b =children(app);
+        //         console.log(b);
+
+        //    var app=document.getElementById("app")
+        //         app.parent
+        // function prev(curEle){
+        //     if(curEle.previousElementSibling){
+        //         return curEle.previousElementSibling
+        //     }
+        //         var pre=curEle.previousSibling
+        //         while(pre&pre.nodeType!==1){
+        //             pre=pre.previousSibling
+        //         }
+        //         return pre;
+
+        // }
+
+        //     var ul=document.getElementById("ul")
+
+        //     var a=prev(ul);
+        //     console.log(a);
+
+        //     var str='wertyuiofghhjeeee';
+        //    console.log(str.lastIndexOf("h"))
+        //     console.log(str.substr(0,2))
+        //     console.log(str.substring(1,4))
+        //     //console.log(str.replace('e','E'))
+        //    var a= str.replace(/[e]/g,function(){
+        //         return "E"
+        //     })
+        //     console.log(a)
+        // function value(number) {
+        //     return (number < 10 && number>0) ? '0' + number : number;
+        // }
+        // var time = new Date;
+        // var a = time.getFullYear()
+        // var b = time.getMonth() + 1;
+        // var c = time.getDate()
+        // var d = time.getDay()
+        // var obj = { 0: "日", 1: "一", 2: "二", 3: "三", 4: "四", 5: '五', 6: "六" };
+        // var Data = a + "年" + " " + value(b) + "月" + " " + value(c) + "日" + " " + "星期" + obj[d];
+        // console.log(Data);
+
+        //以下是时间的方法的封装
+        // function getTime(time){
+        //     if(Object.prototype.toString.call(time)=="[object Date]"){
+        //         var a = time.getFullYear()
+        //         var b = time.getMonth() + 1;
+        //         var c = time.getDate()
+        //         var d = time.getDay()
+        //         var obj = { 0: "日", 1: "一", 2: "二", 3: "三", 4: "四", 5: '五', 6: "六" };
+        //         var Data = a + "年" + " " + value(b) + "月" + " " + value(c) + "日" + " " + "星期" + obj[d];
+        //     }else{
+        //         throw new TypeError("您的数据不支持输出")
+        //     }
+        //         return Data
+
+        // }
+        // var time=new Date;
+        // var f=getTime(time);
+        // console.log(f)
+
+        // window.setTimeout(function(){
+        //     console.log("ok")
+        // },1000)
+        // var n=100;
+        // var m='珠峰';
+        // function fn(){
+        //     console.log(n,m);
+        //     var n=200;
+        //     m='培训';
+        // }
+        // fn();
+        // console.log(n,m)
+
+        // if(("a" in window)){
+        //     var a=12;
+        // }
+        // console.log(a);
+
+        //var a=15;
+        // function fn(){
+        //     console.log(a);
+        //     return
+        //     var a=13
+        // }
+        // fn();
+        // fn();
+        // function fn() {
+        //     console.log(1);
+        // }
+        // fn();
+        // var fn = 13;
+        // fn();
+        // function fn() {
+        //     console.log(2)
+        // }
+        // fn();
+        // var num=20;
+        // var obj={
+        //     num:30,
+        //     fn:(function(num){
+        //         this.num*=3;
+        //         num+=15;
+        //         var num=45;
+        //         return function(){
+        //             this.num*=4;
+        //             num+=20;
+        //             console.log(num)
+        //         }
+        //     })(num)
+        // }
+        // var fn=obj.fn;
+        // fn();
+        // obj.fn()
+        // console.log(window.num,obj.num)
+        // function fn(){
+        //     var i=10;
+        //     return function(n){
+        //         console.log(n+(++i))
+        //     }
+        // }
+        // var f=fn();
+        // f(15);
+        // f(20);
+        // fn()(15);
+        // fn()(20);
+        // function Cat(name,color){
+        //     this.name=name;
+        //     this.color=color;
+        // }
+        // var cat1=new Cat("大猫","黄色")
+        // console.log(cat1.name,cat1.color);
+
+        //    var Width= class Width{
+        //         constructor(width,height){
+        //             this.width=width;
+        //             this.height=height;
+        //         }
+        //     }
+        //     var a=new Width(200,300);
+        //     console.log(a)
+
+        // var obj={name:"1"};
+        // console.log(obj.isPrototypeOf(obj))
+        // Array.prototype.mySlice = function (n, m) {
+        //     var ary = [];
+        //     if(this instanceof Array){
+        //         for (var i = 0; i < this.length; i++) {
+        //         console.log("ok")
+        //         if ((i > n || i === n) && (i < m)) {
+        //             ary.push(this[i])
+        //         }
+
+        //     } 
+        //     }else if(!(this instanceof Array)){
+        //         console.log("这是错误的")
+        //         //return "这是错误的"
+        //     }
+
+        //     return ary;
+        // }
+
+        // console.log([].mySlice.call({},3, 7))
+        // var data=null;
+        // var xhr=new XMLHttpRequest();
+        // xhr.open("get",'js/html',false);
+        // xhr.onreadystatechange=function(){
+        //     if(xhr.readyState===4&&/^2\d{2}$/.test(xhr.status)){
+        //         var val=xhr.responseText;
+        //         data=utils.jsonParse(val);
+        //     }
+        //     return data;
+        // }
+
+        // xhr.send();
+        //     function jsonParse(str){
+
+        //       var val=null;
+        //         try{
+        //             val = JSON.parse(str)
+        //         }catch(e){
+        //             val = eval("("+str+")")
+        //         }
+
+        //         return val;
+        //     }
+
+
+        //   console.log(jsonParse("{name:'a'}"))
+        //     var frg=document.createDocumentFragment;
+        //     console.log(frg);
+
+        // var reg=/\d+/;
+        // console.log(reg.exec("8098kjkljklj"))
+
+        // var reg=new RegExp("\\d+");
+        // console.log(reg.test("dddd"))
+
+        // var reg=/^1\d{10}$/;
+        // console.log(reg.test(18600934730))
+        //     var reg=/\d+/g;
+        //     var str='sdfdfkjsdfj2345fdklj5567lk;3kljltk435';
+        //    //var ary=str.match(reg);
+        //     var ary=[];
+        //     var res=reg.exec(str)
+        //     var res1=reg.exec(str)
+        // //  while(res){
+        // //      ary.push(res[0]);reg.exec()
+        // //      res=reg.exec(str)
+        // //  }
+        // //  console.log(ary)
+        //  console.log(res)
+        //     console.log(res1)
+
+        // var reg=/\d/g;
+        // var str='sdfs32234gfdr5y34u734tuy5635ft764546irt67'
+        // var ary=str.match(reg);
+        // console.log(ary)
+
+        // var reg=/([a-zA-Z])([a-zA-Z])\2/g
+        // console.log(reg.test("good"))
+
+        // var str="2018427";
+        // var ary=['零','壹','贰','叁','肆','五','陆','柒','捌','玖']
+        // str=str.replace(/\d/g,function(){
+        //     console.log(arguments)
+        //     return ary[arguments[0]]
+        // })
+        // console.log(str)
+
+        // var str1="tao li juan"
+        //  var reg=/\b([a-zA-Z]+)\b/g;
+        //  var str2=str1.replace(reg,function(){
+        //      var val=arguments[0];
+        //      var first=val.substr(0,1);
+        //      var last=val.substr(1);
+        //      console.log(first,last)
+        //      return first.toUpperCase()+last;
+        //     })
+        //     console.log(str2)
+
+        // function getCss(curEle,attr){
+        //     var val=null;
+        //     var reg=null;
+        //     try{
+        //         val=window.getComputedStyle(curEle,null)[attr]
+        //     }catch(e){
+        //         val=curEle.currentStyle[attr]
+        //     }
+
+        // }
+        // function getCss(curEle,attr){
+        //     var val=null;
+        //     var reg=null;
+        //     if("getComputedStyle" in window){
+        //         val=window.getComputedStyle(curEle,null)[attr]
+        //     }else{
+        //         val=curEle.currentStyle[attr]
+        //     }
+        //     reg=/^-?\d+(\.\d+)?(px|pt|em|rem)?$/i;
+        //     return reg.test(val)?parseFloat(val):val;
+        // }
+
+        // console.log(getCss(document.body,"width"))
+
+        // function offset(curEle) {
+        //     var totalLeft = null;
+        //     var totalTop = null;
+        //     var par = curEle.offsetParent;
+        //     totalLeft += curEle.offsetLeft;
+        //     totalTop += curEle.offsetTop;
+        //     while (par) {
+        //         if (window.navigator.userAgent.indexOf("MSIE 8.0")) {
+        //             totalTop += par.clientTop;
+        //             totalLeft += par.clientLeft;
+        //         }
+        //         totalLeft += par.offsetLeft;
+        //         totalTop += par.offsetTop;
+        //         par = par.offsetParent;
+        //     }
+
+        //     return { left: totalLeft, top: totalTop }
+
+        // }
+        //  var n=0;
+        //  var timer=window.setInterval(function(){
+        //      n++;
+        //      console.log(n)
+        //      if(n===10){
+        //          window.clearInterval(timer)
+        //      }
+        //  },1000)
+
+            // var n=0;
+            // function fn(){
+            //     window.clearTimeout(timer)
+            //     n++;
+            //     console.log(n)
+            //     if(n===10){
+            //         return 
+            //     }
+            //     var timer=window.setTimeout(fn,1000)
+            // }
+
+            // fn();
+                // function sum(n){
+                //     if(n===3){
+                //         return n;
+                //     } 
+                //     if(n%3===0){
+                //         return n+sum(n-1)
+                //     }
+                //     return sum(n-1)
+                // }
+                // var total=sum(100);
+                // console.log(total)
+                // localStorage.lastName="陶丽娟";
+                    // console.log(localStorage.lastName);
+                    // var birthday=new Date(1991,02,02);
+                    // var copy=new Date();
+                    // copy.setTime(birthday.getTime());
+
+
+
+
+
+
     
-    console.log(window.getComputedStyle(app,null)['width'])
-  
-    // document.getElementsByClassName('xxx') && document.getElementsByClassName('xxx')[0]
-    // document.querySelector('.XXX') 这个方法不兼容ie6-8，比起上面的写法更简便，有值就返回匹配到的第一个，没有
-    // 值就返回null，比起上面省去一步判断
+    
+    
+    
+    
+    
+    
 
 
 
 
 
+
+
+
+
+
+
+    
+    
+    </script> -->
+    
+    <script type="text/javascript">
+    // var app=document.getElementById("app")
+    // app.onclick=function(){
+    //     console.log("nihao")
+    //     document.documentElement.scrollTop=0;
+    //     document.body.scrollTop=0;
+    // }
+    //     window.onload=function(){
+    //         console.log("ok")
+    //     }
+    //     window.onscroll=function(){
+    //         console.log("我动了")
+    //     }
+    // window.setTimeout(function(){
+    //     console.log(1)
+    // },100)
+    // console.log(0)
+    // console.log(2)
+    // window.setTimeout(function(){
+    //     console.log("ok")
+    //     var oImg=new Image;
+    //     var img=document.getElementsByTagName("img")[0]
+    // oImg.src=img.getAttribute("trueImage")
+    // console.log(img.getAttribute("trueImage"))
+    // console.log(oImg.src)
+    // oImg.onload=function(){
+    //     console.log("ok1")
+    //     img.src=this.src;
+    //     img.style.display="block";
+    //     oImg=null;
+    // }
+    // },2000)
+    
+    //  var obj=new Object;
+    //  obj.name="taolijaun"
+    //  Object.prototype.aaa='skfksldfj'
+    //   for(var key in obj){
+    //       console.log(obj[key])
+    //   }
+        //  var a=document.getElementById("img")
+        //  img.onclick=function(){
+        //     window.location.href=("https://www.baidu.com/")
+        //  }
+        
+
+
+
+        
 
     </script>
+
+
 </body>
+
 </html>
